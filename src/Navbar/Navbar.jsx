@@ -22,14 +22,17 @@ export default function Navbar() {
       <Box
         display={"flex"}
         justifyContent={"space-between"}
-        border={"1px solid red"}
+        // border={"1px solid red"}
         p={"1rem"}
         position={"sticky"}
         top={"0"}
         zIndex={"99"}
         backgroundColor={"#F9F9F9"}
+        boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
       >
-        <Box width={"20%"} border={"1px solid red"}>
+        <Box width={"20%"} 
+        // border={"1px solid red"}
+        >
           <Image src={logo} alt="logo" />
         </Box>
         <Center display={"flex"} justifyContent={"space-around"} width={"50%"}>
@@ -43,7 +46,7 @@ export default function Navbar() {
             <MenuButton
               onMouseEnter={onOpen}
               onMouseLeave={onClose}
-              border={"1px solid red"}
+            //   border={"1px solid red"}
               height={"100%"}
             >
               <Heading fontSize={"1rem"}>
@@ -53,7 +56,7 @@ export default function Navbar() {
             <MenuList
               onMouseEnter={onOpen}
               onMouseLeave={onClose}
-              border={"1px solid red"}
+            //   border={"1px solid red"}
               mt={"-0.5rem"}
             >
               <Link to="/corporate-services">
@@ -80,7 +83,7 @@ export default function Navbar() {
 
         <Center
           width={"20%"}
-          border={"1px solid red"}
+        //   border={"1px solid red"}
           display={"flex"}
           gap={"1rem"}
         >

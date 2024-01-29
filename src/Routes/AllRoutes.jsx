@@ -14,7 +14,6 @@ import { Box } from "@chakra-ui/react";
 export default function AllRoutes() {
   return (
     <>
-      <Box border={"1px solid red"} height={"200px"}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
@@ -25,7 +24,6 @@ export default function AllRoutes() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
-      </Box>
     </>
   );
 }

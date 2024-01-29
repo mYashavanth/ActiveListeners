@@ -1,10 +1,12 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
 
 export default function Testimonials() {
-
-    return (
-        <>
-            <h1>Testimonials</h1>
-        </>
-    );
+  return (
+    <>
+      <Box h={"50vh"}>
+        <h1>Testimonials</h1>
+      </Box>
+    </>
+  );
 }

@@ -1,6 +1,5 @@
 import { Box, Button, Center, Heading, Text } from "@chakra-ui/react";
 import React from "react";
-import Footer from "../Footer/Footer";
 import { MdGroups, MdPerson } from "react-icons/md";
 import { FaGraduationCap } from "react-icons/fa";
 
@@ -8,7 +7,13 @@ export default function Home() {
   return (
     <>
       {/* section 1 */}
-      <Box>
+      <Box
+        height={"60vh"}
+        backgroundColor={"#F9F9F9"}
+        display={"flex"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+      >
         <Box width={"40%"} p={"1rem"}>
           <Heading color={"#026ABA"}>
             Active Listening The Master Key to Effective Communication
@@ -102,9 +107,6 @@ export default function Home() {
           </Text>
         </Box>
       </Box>
-
-      {/* footer section */}
-      <Footer />
     </>
   );
 }
