@@ -14,19 +14,18 @@ import { Box } from "@chakra-ui/react";
 export default function AllRoutes() {
   return (
     <>
-    <Box border={"1px solid red"} height={"200px"}>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/corporate-services" element={<CorporateServices />} />
-        <Route path="/individual-services" element={<IndividualServices />} />
-        <Route path="/student-services" element={<StudentServices />} />
-        <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-      </Routes>
-    </Box>
+      <Box border={"1px solid red"} height={"200px"}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/corporate-services" element={<CorporateServices />} />
+          <Route path="/individual-services" element={<IndividualServices />} />
+          <Route path="/student-services" element={<StudentServices />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+        </Routes>
+      </Box>
     </>
   );
 }

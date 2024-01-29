@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Center,
+  Heading,
   Image,
   Menu,
   MenuButton,
@@ -15,25 +16,46 @@ import { Link } from "react-router-dom";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
 export default function Navbar() {
-    const { isOpen, onClose, onOpen } = useDisclosure();
+  const { isOpen, onClose, onOpen } = useDisclosure();
   return (
     <>
-      <Box display={"flex"} justifyContent={"space-between"} border={"1px solid red"} p={"1rem"}>
+      <Box
+        display={"flex"}
+        justifyContent={"space-between"}
+        border={"1px solid red"}
+        p={"1rem"}
+        position={"sticky"}
+        top={"0"}
+        zIndex={"99"}
+        backgroundColor={"#F9F9F9"}
+      >
         <Box width={"20%"} border={"1px solid red"}>
           <Image src={logo} alt="logo" />
         </Box>
-        <Center display={"flex"} justifyContent={"space-between"} width={"50%"}>
+        <Center display={"flex"} justifyContent={"space-around"} width={"50%"}>
           <Link to="/">
-            <h3>Home</h3>
+            <Heading fontSize={"1rem"}>Home</Heading>
           </Link>
           <Link to="/about-us">
-            <h3>About Us</h3>
+            <Heading fontSize={"1rem"}>About Us</Heading>
           </Link>
-          <Menu isOpen={isOpen} onClose={onClose} >
-            <MenuButton onMouseEnter={onOpen} onMouseLeave={onClose} border={"1px solid red"} height={"100%"}>
-              Actions <ChevronDownIcon />
+          <Menu isOpen={isOpen} onClose={onClose}>
+            <MenuButton
+              onMouseEnter={onOpen}
+              onMouseLeave={onClose}
+              border={"1px solid red"}
+              height={"100%"}
+            >
+              <Heading fontSize={"1rem"}>
+                Actions <ChevronDownIcon />
+              </Heading>
             </MenuButton>
-            <MenuList onMouseEnter={onOpen} onMouseLeave={onClose} border={"1px solid red"} mt={"-0.5rem"}>
+            <MenuList
+              onMouseEnter={onOpen}
+              onMouseLeave={onClose}
+              border={"1px solid red"}
+              mt={"-0.5rem"}
+            >
               <Link to="/corporate-services">
                 <MenuItem>Corporate Services</MenuItem>
               </Link>
@@ -46,21 +68,34 @@ export default function Navbar() {
             </MenuList>
           </Menu>
           <Link to="/testimonials">
-            <h3>Testimonials</h3>
+            <Heading fontSize={"1rem"}>Testimonials</Heading>
           </Link>
           <Link to="/blog">
-            <h3>Blog</h3>
+            <Heading fontSize={"1rem"}>Blog</Heading>
           </Link>
           <Link to="/contact-us">
-            <h3>Contact Us</h3>
+            <Heading fontSize={"1rem"}>Contact Us</Heading>
           </Link>
         </Center>
 
-        <Center width={"20%"} border={"1px solid red"} display={"flex"} gap={"1rem"}>
-          <Button colorScheme="blue" variant="outline">
+        <Center
+          width={"20%"}
+          border={"1px solid red"}
+          display={"flex"}
+          gap={"1rem"}
+        >
+          <Button
+            backgroundColor={"#B6B801"}
+            color={"white"}
+            _hover={{ backgroundColor: "#026ABA" }}
+          >
             Login
           </Button>
-          <Button colorScheme="blue" variant="solid">
+          <Button
+            backgroundColor={"#026ABA"}
+            color={"white"}
+            _hover={{ backgroundColor: "#B6B801" }}
+          >
             Sign Up
           </Button>
         </Center>
