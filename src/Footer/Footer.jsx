@@ -29,7 +29,16 @@ export default function Footer() {
             <Heading color={"#026ABA"}>Counselling Experts</Heading>
             <Text>Want to receive the updates from Active Listeners.</Text>
           </Box>
-          <Center display={"flex"} gap={"1rem"}>
+          <Center
+            display={"flex"}
+            flexDirection={{
+              base: "column",
+              md: "column",
+              lg: "row",
+              xl: "row",
+            }}
+            gap={"1rem"}
+          >
             <Input placeholder="Enter your email" required={true} w={"20rem"} />
             <Input placeholder="Enter your Name" required={true} w={"20rem"} />
             <Button
@@ -44,11 +53,12 @@ export default function Footer() {
         <Box
           display={"flex"}
           justifyContent={"center"}
+          flexDirection={{ base: "column", md: "column", lg: "row", xl: "row" }}
           gap={"5rem"}
           p={"1rem"}
           backgroundColor={"#F0F0F0"}
         >
-          <Box w={"20%"}>
+          <Box w={{ base: "90%", md: "80%", lg: "25%", xl: "30%" }} m={"auto"}  p={"1rem"}>
             <Image src={logo} alt="logo" />
             <Text>
               Listening Services at Active Listeners are more user defined than
@@ -56,7 +66,14 @@ export default function Footer() {
               individualistic and cannot be served as a platter.
             </Text>
           </Box>
-          <Box w={"20%"} display={"flex"} flexDirection={"column"} gap={"1rem"}>
+          <Box
+            w={{ base: "90%", md: "80%", lg: "25%", xl: "30%" }}
+            display={"flex"}
+            flexDirection={"column"}
+            gap={"1rem"}
+            m={"auto"}
+            p={"1rem"}
+          >
             <Heading size={"md"}>Contact Us</Heading>
             <Box>
               <Heading color={"#026ABA"} size={"md"}>

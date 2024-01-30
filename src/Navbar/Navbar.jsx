@@ -3,6 +3,7 @@ import {
   Button,
   Center,
   Heading,
+  IconButton,
   Image,
   Menu,
   MenuButton,
@@ -13,7 +14,7 @@ import {
 import React from "react";
 import logo from "./Images/logo.png";
 import { Link } from "react-router-dom";
-import { ChevronDownIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, HamburgerIcon, RepeatIcon } from "@chakra-ui/icons";
 
 export default function Navbar() {
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -30,12 +31,16 @@ export default function Navbar() {
         backgroundColor={"#F9F9F9"}
         boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}
       >
-        <Box width={"20%"} 
-        // border={"1px solid red"}
-        >
-          <Image src={logo} alt="logo" />
+        <Box width={{ base: "40%", md: "40%", lg: "20%", xl: "20%" }}>
+          <Link to="/">
+            <Image src={logo} alt="logo" />
+          </Link>
         </Box>
-        <Center display={"flex"} justifyContent={"space-around"} width={"50%"}>
+        <Center
+          display={{ base: "none", md: "none", lg: "flex", xl: "flex" }}
+          justifyContent={"space-around"}
+          width={"50%"}
+        >
           <Link to="/">
             <Heading fontSize={"1rem"}>Home</Heading>
           </Link>
@@ -46,7 +51,7 @@ export default function Navbar() {
             <MenuButton
               onMouseEnter={onOpen}
               onMouseLeave={onClose}
-            //   border={"1px solid red"}
+              //   border={"1px solid red"}
               height={"100%"}
             >
               <Heading fontSize={"1rem"}>
@@ -56,7 +61,7 @@ export default function Navbar() {
             <MenuList
               onMouseEnter={onOpen}
               onMouseLeave={onClose}
-            //   border={"1px solid red"}
+              //   border={"1px solid red"}
               mt={"-0.5rem"}
             >
               <Link to="/corporate-services">
@@ -82,9 +87,10 @@ export default function Navbar() {
         </Center>
 
         <Center
-          width={"20%"}
-        //   border={"1px solid red"}
+          width={{ base: "57%", md: "40%", lg: "20%", xl: "20%" }}
+          //   border={"1px solid red"}
           display={"flex"}
+          justifyContent={"flex-end"}
           gap={"1rem"}
         >
           <Button
@@ -101,6 +107,41 @@ export default function Navbar() {
           >
             Sign Up
           </Button>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              variant="outline"
+              display={{ base: "block", md: "block", lg: "none", xl: "none" }}
+            />
+            <MenuList>
+              <Link to="/">
+                <MenuItem>Home</MenuItem>
+              </Link>
+              <Link to="/about-us">
+                <MenuItem>About Us</MenuItem>
+              </Link>
+              <Link to="/corporate-services">
+                <MenuItem>Corporate Services</MenuItem>
+              </Link>
+              <Link to="/individual-services">
+                <MenuItem>Individual Services</MenuItem>
+              </Link>
+              <Link to="/student-services">
+                <MenuItem>Student Services</MenuItem>
+              </Link>
+              <Link to="/testimonials">
+                <MenuItem>Testimonials</MenuItem>
+              </Link>
+              <Link to="/blog">
+                <MenuItem>Blog</MenuItem>
+              </Link>
+              <Link to="/contact-us">
+                <MenuItem>Contact Us</MenuItem>
+              </Link>
+            </MenuList>
+          </Menu>
         </Center>
       </Box>
     </>
